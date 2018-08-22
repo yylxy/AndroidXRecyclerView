@@ -2,15 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-apply from: file('../gradle-mvn-push.gradle')
-def libs = rootProject.ext.dependencies
-def defaultArray = rootProject.ext.defaultConfig
+
 
 android {
-    compileSdkVersion defaultArray.compileSdkVersion
+    compileSdkVersion 27
     defaultConfig {
-        minSdkVersion defaultArray.minSdkVersion
-        targetSdkVersion defaultArray.targetSdkVersion
+        minSdkVersion 19
+        targetSdkVersion 27
     }
     dataBinding {
         enabled = true
@@ -19,11 +17,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation libs.appcompat
-    implementation libs.design
-    implementation libs.constraint
-    implementation libs.kotlinJdk7
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:design:27.1.1'
 
 
 }

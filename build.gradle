@@ -32,19 +32,8 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-}
 
-// 快照
-configurations.all {
-    // 检查远程依赖是否存在更新
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-    // 采用动态版本声明的依赖缓存
-    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
-}
 
-tasks.getByPath(":xRecyclerview:androidJavadocs").enabled = false
 
 
 
