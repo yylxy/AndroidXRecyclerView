@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tag_key_holder" type="id">1</item>
+    <item name="tag_key_position" type="id">2</item>
+    <item name="tag_key_data" type="id">3</item>
+</resources>

@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: file('../gradle-mvn-push.gradle')
+def libs = rootProject.ext.dependencies
+def defaultArray = rootProject.ext.defaultConfig
+
+android {
+    compileSdkVersion defaultArray.compileSdkVersion
+    defaultConfig {
+        minSdkVersion defaultArray.minSdkVersion
+        targetSdkVersion defaultArray.targetSdkVersion
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.appcompat
+    implementation libs.design
+    implementation libs.constraint
+    implementation libs.kotlinJdk7
+
+
+
+}
